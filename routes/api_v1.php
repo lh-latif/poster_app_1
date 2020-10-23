@@ -26,7 +26,7 @@ Route::get("/posts/{id}", [V1\PostController::class,"show"]);
 Route::post("/token", [V1\TokenController::class,"login"]);
 
 use App\Http\Middleware\V1\AuthToken;
-use App\Http\Middleware\V1\UserPost;
+use App\Http\Middleware\UserPost;
 
 Route::middleware(AuthToken::class)->group(function() {
   Route::get("/user", [V1\TokenController::class,"user"]);

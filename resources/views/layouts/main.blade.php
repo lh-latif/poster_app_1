@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Faster</title>
-    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"/>
     @yield("head")
   </head>
 

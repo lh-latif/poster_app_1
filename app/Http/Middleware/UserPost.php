@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Middleware\V1;
+namespace App\Http\Middleware;
 
 use App\Models\Post;
 use Closure;

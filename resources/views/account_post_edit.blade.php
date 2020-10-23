@@ -9,19 +9,19 @@
 @section("body")
 <div class="pt-5">
   <h1 class="pb-4">Post Baru</h1>
-  <form action="/account/add_post" method="POST">
+  <form action="/account/post/{{$post->id}}/edit" method="POST">
     @csrf
     <div class="form-row">
       <div class="form-group col-12">
         <label>Judul</label>
-        <input id="title" type="text" name="title" class="form-control form-control-lg">
+        <input id="title" type="text" name="title" class="form-control form-control-lg" value="{{$post->title}}">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-12">
         <label>Konten</label>
-        <textarea class="form-control" name="content"></textarea>
+        <textarea class="form-control" name="content">{{$post->content}}</textarea>
       </div>
     </div>
 
