@@ -1,0 +1,26 @@
+.top-bar {
+  background-color: rgb(161, 207, 193);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  /* justify-content: space-between; */
+}
+
+.title-box {
+  background-color: white;
+  padding: 0 8px;
+  border-radius: 5px;
+}
+
+.title-text {
+  font-size: 18pt;
+  font-weight: bold;
+  color: rgb(161, 207, 193);
+}
+
+.topbar-right-content {
+  /* justify-self: end; */
+  margin-left: 50px;
+}

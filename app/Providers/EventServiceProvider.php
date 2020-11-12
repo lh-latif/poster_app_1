@@ -7,6 +7,9 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
+use App\Events as Ev;
+use App\Listeners as Li;
+
 class EventServiceProvider extends ServiceProvider
 {
     /**
@@ -18,6 +21,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        Ev\PostAdded::class => [
+          Li\PostCounter::class
+        ],
+        Ev\PostDeleted::class => [
+          Li\PostCounter::class
+        ]
     ];
 
     /**

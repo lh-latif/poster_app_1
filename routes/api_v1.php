@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\V1;
 
+Route::get("/counter/post",[V1\PostCounterController::class,"index"]);
+
 Route::get("/posts", [V1\PostController::class,"index"]);
 Route::get("/posts/{id}", [V1\PostController::class,"show"]);
 

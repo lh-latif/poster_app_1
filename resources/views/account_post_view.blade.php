@@ -7,6 +7,15 @@
     <a class="btn btn-primary" href="/account/post/{{$post->id}}/edit">
       Edit
     </a>
+    <div>
+      <form action="/account/post/{{$post->id}}/delete" method="POST">
+        <!-- <input type="hidden" name="_method" value="DELETE"> -->
+        @csrf
+        <button type="submit" class="btn btn-warning">
+          Hapus
+        </button>
+      </form>
+    </div>
   </div>
-  <p>{{$post->content}}</p>
+  <div>{!! $post->content !!}</div>
 @endsection

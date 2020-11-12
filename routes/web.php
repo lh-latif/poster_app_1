@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers as Cont;
 
 
+Route::post("/upload/images",[Cont\ImageUploadController::class,"upload"]);
+
 Route::get('/', [Cont\HomeController::class,"show"]);
 
 Route::get("/posts",[Cont\PostController::class,"index"]);
@@ -36,7 +38,7 @@ Route::prefix("/account")->middleware(AuthUser::class)->group(function() {
 
   Route::get("/add_post",[Cont\UserPostController::class,"add"]);
   Route::post("/add_post",[Cont\UserPostController::class,"submit"]);
-  
+
   Route::middleware(UserPost::class)->group(function() {
     Route::get("/post/{id}", [Cont\UserPostController::class,"show"]);
     Route::get("/post/{id}/edit", [Cont\UserPostController::class,"edit"]);

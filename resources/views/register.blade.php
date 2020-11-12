@@ -3,9 +3,6 @@
 @section("body")
   <div class="my-3">
     <h1 class="mb-2">Register</h1>
-    <a href="/login" class="btn">
-      Login
-    </a>
   </div>
 
 
