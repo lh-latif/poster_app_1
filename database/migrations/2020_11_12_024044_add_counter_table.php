@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPostTable extends Migration
+class AddCounterTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class AddPostTable extends Migration
      */
     public function up()
     {
-        Schema::create("post", function(Blueprint $table) {
-            $table->id();
-            $table->string("title");
-            $table->text("content");
-            $table->bigInteger("user_id")->unsigned();
-            $table->timestamps();
-            $table->unique("id");
+        Schema::create("counter",function(Blueprint $table) {
+          $table->id()->unique();
+          $table->string("key")->unique();
+          $table->integer("value")->unsigned();
         });
     }
 
