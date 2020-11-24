@@ -34,6 +34,7 @@ Route::middleware(AuthToken::class)->group(function() {
   Route::get("/user", [V1\TokenController::class,"user"]);
   Route::get("/user/post", [V1\UserPostController::class,"index"]);
   Route::post("/user/post", [V1\UserPostController::class,"add"]);
+  Route::post("/posts/{id}/comment", [V1\CommentController::class, "add"]);
 
   Route::middleware(UserPost::class)->group(function() {
     Route::get("/user/post/{id}", [V1\UserPostController::class,"get"]);

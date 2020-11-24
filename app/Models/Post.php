@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\Post\Data;
 use Exception;
 use App\Events\{PostAdded,PostDeleted};
+use Ramsey\Uuid\Uuid;
 
 class Post {
   public static function list_post() {
@@ -28,6 +29,7 @@ class Post {
 
   public static function add_post($title,$content,$user_id) {
       $post = new Data();
+      $post->id = Uuid::uuid4();
       $post->title = $title;
       $post->content = $content;
       $post->user_id = $user_id;
@@ -52,7 +54,7 @@ class Post {
 
   public static function delete_post($post) {
       if ($post->delete()) {
-          event(new PostDeleted());
+          event(new PostDeleted($post));
       } else {
           throw Exception("failed to delete post");
       }

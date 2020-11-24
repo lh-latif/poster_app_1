@@ -25,7 +25,7 @@ class PostAdded
      */
     public function __construct($post_)
     {
-        $post = $post_;
+        $this->post = $post_;
     }
 
     /**

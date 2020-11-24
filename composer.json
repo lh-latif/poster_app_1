@@ -15,7 +15,9 @@
         "graham-campbell/markdown": "^13.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "ramsey/uuid": "^4.1",
+        "rmccue/requests": "^1.7"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

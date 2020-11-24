@@ -22,10 +22,12 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         Ev\PostAdded::class => [
-          Li\PostCounter::class
+          Li\PostCounter::class,
+          Li\PostComment::class
         ],
         Ev\PostDeleted::class => [
-          Li\PostCounter::class
+          Li\PostCounter::class,
+          Li\PostComment::class
         ]
     ];
 

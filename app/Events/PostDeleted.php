@@ -14,14 +14,15 @@ class PostDeleted
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $eventName = "post_deleted";
+    public $post;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($post)
     {
-        //
+        $this->post = $post;
     }
 
     /**

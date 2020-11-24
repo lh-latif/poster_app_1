@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use Firebase\JWT\JWT;
+use App\Models\Result;
 
 class TokenController {
   public static function login(Request $req) {
@@ -12,17 +13,17 @@ class TokenController {
       "password" => ["string","min:6"],
       "email" => ["email"]
     ]);
-    $user = User::verify_user(
+    $result = User::verify_user(
         $data["email"],
         $data["password"]
       );
-    if ($user == false) {
+    if ($result->is_error()) {
       return response()->json([
         "error" => "not_found"
       ]);
     } else {
       return response()->json([
-        "token" => JWT::encode(["user_id" => $user->id], env("APP_KEY","sdlfjsdlj"))
+        "token" => JWT::encode(["user_id" => $result->unwrap()->id], env("APP_KEY","sdlfjsdlj"))
       ]);
     }
   }

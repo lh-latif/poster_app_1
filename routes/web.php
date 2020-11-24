@@ -20,6 +20,9 @@ use App\Http\Controllers as Cont;
 Route::post("/upload/images",[Cont\ImageUploadController::class,"upload"]);
 
 Route::get('/', [Cont\HomeController::class,"show"]);
+Route::get("/app", function() {
+    return view("app");
+});
 
 Route::get("/posts",[Cont\PostController::class,"index"]);
 Route::get("/posts/{id}",[Cont\PostController::class,"show"]);

@@ -17,12 +17,13 @@ class RegisterController {
       "password" => ["string","required","min:6","max:20"],
       "email" => ["string","email","required"]
     ]);
-    User::add_user_and_password(
+    $result = User::add_user_and_password(
        $data["name"],
        $data["email"],
        $data["password"]
      );
-
+    var_dump($result);
+    // return redirect("/login");
   }
 }
 

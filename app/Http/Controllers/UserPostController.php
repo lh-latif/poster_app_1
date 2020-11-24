@@ -27,7 +27,7 @@ class UserPostController {
   public static function submit(Request $req) {
     $data = $req->validate(self::$columns);
     try {
-      // $post = Post::add_post($data["title"],$data["content"],$req->user->id);
+      $post = Post::add_post($data["title"],$data["content"],$req->user->id);
       return redirect("/account");
     } catch(Exception $e) {
       return response("",422);
